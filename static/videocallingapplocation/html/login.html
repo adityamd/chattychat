@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login: Chatting Application</title>
+    </head>
+</html>
+<body>
+    <div>
+        {% for message in messages %}
+            <p style="color: orangered;"><strong>{{message}}</strong></p>
+        {% endfor %}
+        <form action="/login/" method = "POST"> {% csrf_token %}
+            <label for="username">Username</label>
+            <input name="username" type="text" placeholder="Username" required/><br /><br />
+            <label for="password">Password</label>
+            <input name="password" type="password" placeholder="Password" required/><br /><br />
+            <input type="submit" value="Login" />
+        </form><br />
+        <button><a href="/register/" style="text-decoration: none; color: black">Register</a></button>
+    </div>
+</body>
